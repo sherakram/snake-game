@@ -30,7 +30,7 @@ A modern and responsive Snake Game built with HTML5, CSS3, and Vanilla JavaScrip
 
 Play the game here:
 
-**Coming Soon** *(GitHub Pages deployment pending)*
+(https://sherakram.github.io/snake-game/)
 
 ## 📂 Project Structure
 
