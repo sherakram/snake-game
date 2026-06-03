@@ -1,0 +1,203 @@
+:root {
+    /* Font family */
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    /* Font sizes */
+    --font_size--small: 0.875rem;     /* 14px */
+    --font_size--medium: 0.9375rem;    /* 15px */
+    --font_size--normal: 1.125rem;    /* 18px */
+    --font_size--large: 1.625rem;     /* 26px */
+    --font_size--xlarge: 1.9375rem;   /* 31px */
+    --font_size--xxlarge: 2.3125rem;  /* 37px */
+    --font_size--xxxlarge: 2.8125rem; /* 45px */
+
+    /* Font Weights */
+    --font_weight--thin: 100;
+    --font_weight--extralight: 200;
+    --font_weight--light: 300;
+    --font_weight--normal: 400;
+    --font_weight--medium: 500;
+    --font_weight--semibold: 600;
+    --font_weight--bold: 700;
+    --font_weight--extrabold: 800;
+    --font_weight--black: 900;
+
+    /* border colors */
+    --border-color: rgba(255, 255, 255, 0.1);
+
+    /* Colors */
+    --bg-color: #222;
+    --bg-gradient: radial-gradient(#333, #111);
+    --block-bg: rgba(0, 0, 0, 0.15);
+    --snake-color: #fff;
+    --food-color: #77ff33;
+
+    /* Score color */
+    --infos-color: rgba(255, 255, 255, 0.5);
+
+    /* Spacing */
+    --space_05: 0.25rem; /* 4px   - utility to substitute 0 margins */
+    --space_1: 0.5rem;   /* 8px   - utility for tight paddings etc */
+    --space_2: 1rem;     /* 16px  - 1/2 line height, for closely related elements */
+    --space_4: 2rem;     /* 32px  - 1 line height, for related elements */
+    --space_8: 4rem;     /* 64px  - 2 line heights, for loosely related elements */
+    --space_16: 8rem;    /* 128px - 4 line heights, for unrelated elements */
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: var(--bg-color);
+    background: var(--bg-gradient);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: var(--infos-color);
+    font-family: var(--font-family);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    margin: 0 auto;
+    padding: var(--space_4);
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--border-color);
+    
+}
+
+.infos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border: 1px solid var(--border-color);
+    padding: 15px 10px;
+}
+
+.infos .time,.score,.high-score {
+    font-size: var(--font_size--normal);
+    color: var(--infos-color);
+    font-weight: var(--font_weight--bold);
+}
+
+.board {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(20px, 1fr));
+}
+
+.block {
+    border: 1px solid var(--border-color);
+    width: 20px;
+    height: 20px;
+    background: var(--block-bg);
+    transition-property:
+    background,
+    box-shadow,
+    opacity,
+    transform
+    ;
+    font-size: 10px;
+}
+
+.snakeColor {
+    background-color: var(--snake-color);
+    box-shadow: 0 0 5px var(--snake-color);
+}
+
+.foodColor {
+    background-color: var(--food-color);
+    box-shadow: 0 0 5px var(--food-color);
+}
+
+.modals {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(10px);
+    background-color: var(--block-bg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.modals .startGame,.gameOver {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space_2);
+}
+
+.modals .startGame h2,.gameOver h2 {
+    font-size: var(--font_size--large);
+    color: var(--infos-color);
+    font-weight: var(--font_weight--bold);
+}
+
+.modals .startGame button,.gameOver button {
+    padding: var(--space_1) var(--space_2);
+    font-size: var(--font_size--medium);
+    font-weight: var(--font_weight--bold);
+    transition: all 0.3s ease;
+}
+
+.modals .startGame button:hover,.gameOver button:hover {
+    transform: scale(1.1);
+}
+
+.gameOver .score {
+    font-size: var(--font_size--medium);
+    color: var(--infos-color);
+    font-weight: var(--font_weight--bold);
+}
+
+.gameOver .score span {
+    color: var(--food-color);
+}
+
+.startGame {
+    display: flex;
+}
+
+.gameOver {
+    display: none;
+}
+
+@media (min-width: 320px) and (max-width: 600px) {
+    main {
+        padding: var(--space_2);
+    }
+    
+    .infos .time,.score,.high-score {
+        font-size: var(--font_size--small);
+        font-weight: var(--font_weight--normal);
+    }
+}

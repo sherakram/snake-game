@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta property="og:title" content="Snake Game">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="Classic Snake Game built with Vanilla JavaScript">
+    <title>Snake Game | JavaScript Arcade Game</title>
+    <meta name="description" content="Interactive Snake Game built with HTML, CSS and JavaScript featuring score tracking and responsive design.">
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <main>
+        <section>
+            <div class="infos">
+                <div class="high-score">High Score: <span class="high-score-value">0</span></div>
+                <div class="score">Score: <span class="score-value">0</span></div>
+                <div class="time">Time: <span class="time-value">00-00</span></div>
+            </div>
+            <div class="board"></div>
+        </section>
+
+        <div class="modals">
+            <div class="startGame">
+                <h2>Snake Game</h2>
+                <p>Use the arrow keys to control the snake.</p>
+                <button id="startButton">Start Game</button>
+            </div>
+            <div class="gameOver">
+                <h2>Game Over</h2>
+                <p>Your score: <span class="game-over-score">0</span></p>
+                <button id ="restartButton">Restart</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="app.js" ></script>
+</body>
+</html>
