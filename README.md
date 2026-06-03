@@ -24,7 +24,7 @@ A modern and responsive Snake Game built with HTML5, CSS3, and Vanilla JavaScrip
 ## 📸 Preview
 
 ![Snake Game Desktop Preview](./screenshot/snake-game.png)
-![Snake Game Mobile Preview](./screenshot/snake game mobile.png)
+![Snake Game Mobile Preview](./screenshot/snake-game-mobile.png)
 
 ## 🚀 Live Demo
 
